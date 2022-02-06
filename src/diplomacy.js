@@ -22,7 +22,7 @@ function checkPlayers() {
       player.reputation -= player.idiot;
       delete player.idiot;
     }
-    for (const roomName of Object.keys(player.rooms)) {
+    for (const roomName of Object.keys(player.rooms || {})) {
       const roomData = global.data.rooms[roomName];
       if (roomData) {
         if (roomData.player !== playerName) {
